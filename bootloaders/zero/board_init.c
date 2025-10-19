@@ -94,8 +94,10 @@ void board_init(void) {
 
 #else
 
+    /* MODIFIED for Motor Controller: XTALEN bit NOT set = bypass mode
+     * External clock on XIN32 only, XOUT32 freed as GPIO PA01 */
     SYSCTRL->XOSC32K.reg =
-        SYSCTRL_XOSC32K_STARTUP(6) | SYSCTRL_XOSC32K_XTALEN | SYSCTRL_XOSC32K_EN32K;
+        SYSCTRL_XOSC32K_STARTUP(6) | SYSCTRL_XOSC32K_EN32K;
     SYSCTRL->XOSC32K.bit.ENABLE = 1;
     while ((SYSCTRL->PCLKSR.reg & SYSCTRL_PCLKSR_XOSC32KRDY) == 0)
         ;

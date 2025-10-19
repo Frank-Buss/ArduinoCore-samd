@@ -93,3 +93,9 @@ For example for the **Arduino MKR1000** we use `board_definitions_arduino_mkr100
 BOARD_ID=arduino_mkr1000 NAME=samd21_sam_ba_arduino_mkr1000 make clean all
 ```
 
+For the **Motor Controller** (XOSC32K bypass mode) we use `board_definitions_motor_controller.h` and it is build with:
+
+```
+BOARD_ID=motor_controller NAME=motor_controller_sam_ba make clean all
+```
+
